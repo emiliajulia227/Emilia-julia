@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Entdecke Mich</title>
+<title>Entdecke Mich ❤️</title>
 
 <style>
 
@@ -16,57 +19,163 @@ font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
+
+width:100%;
 height:100vh;
 overflow:hidden;
 display:flex;
 justify-content:center;
 align-items:center;
-background:#ff4d9d;
+background:#ff5fa2;
+position:relative;
+
 }
 
-/* Background blur */
+/* Background Blur */
+
 .bg{
-position:fixed;
+
+position:absolute;
+top:0;
+left:0;
 width:100%;
 height:100%;
-background:url("image.jpg.jpg") center center;
+background:url("foto.jpg") center center;
 background-size:cover;
-filter:blur(20px) brightness(.55);
-transform:scale(1.2);
-z-index:-2;
+filter:blur(18px) brightness(.45);
+transform:scale(1.25);
+z-index:-3;
+
 }
+
+/* Pink Overlay */
 
 .overlay{
-position:fixed;
+
+position:absolute;
 width:100%;
 height:100%;
-background:linear-gradient(rgba(255,90,170,.35),rgba(255,0,120,.65));
-z-index:-1;
+background:linear-gradient(135deg,
+rgba(255,90,170,.45),
+rgba(255,0,120,.55));
+
+z-index:-2;
+
 }
+
+/* Floating Hearts */
+
+.hearts{
+
+position:absolute;
+width:100%;
+height:100%;
+overflow:hidden;
+pointer-events:none;
+
+}
+
+.hearts span{
+
+position:absolute;
+bottom:-100px;
+font-size:28px;
+animation:heart 8s linear infinite;
+opacity:.8;
+
+}
+
+.hearts span:nth-child(1){
+
+left:10%;
+animation-delay:0s;
+
+}
+
+.hearts span:nth-child(2){
+
+left:25%;
+animation-delay:2s;
+
+}
+
+.hearts span:nth-child(3){
+
+left:50%;
+animation-delay:4s;
+
+}
+
+.hearts span:nth-child(4){
+
+left:70%;
+animation-delay:1s;
+
+}
+
+.hearts span:nth-child(5){
+
+left:90%;
+animation-delay:5s;
+
+}
+
+@keyframes heart{
+
+0%{
+
+transform:translateY(0) scale(.6);
+
+opacity:0;
+
+}
+
+25%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-110vh) scale(1.4);
+
+opacity:0;
+
+}
+
+}
+
+/* CARD */
 
 .card{
 
 position:relative;
-width:350px;
-background:#fff;
+
+width:360px;
+
+background:white;
+
 border-radius:35px;
-padding:35px 20px 40px;
+
+padding:35px 25px 45px;
+
 text-align:center;
-box-shadow:0 25px 50px rgba(0,0,0,.25);
+
+box-shadow:0 20px 50px rgba(0,0,0,.35);
 
 }
-
 /* FOTO */
 
 .photo{
 
-width:250px;
-height:250px;
+width:270px;
+height:270px;
 margin:auto;
 border-radius:50%;
 overflow:hidden;
-border:10px solid #ff2f8d;
-box-shadow:0 15px 35px rgba(0,0,0,.35);
+border:8px solid #ff2b87;
+box-shadow:0 20px 40px rgba(0,0,0,.35);
 animation:floating 3s ease-in-out infinite;
 
 }
@@ -82,44 +191,41 @@ object-fit:cover;
 @keyframes floating{
 
 0%{
+
 transform:translateY(0px) scale(1);
+
 }
 
 50%{
-transform:translateY(-15px) scale(1.05);
+
+transform:translateY(-18px) scale(1.05);
+
 }
 
 100%{
+
 transform:translateY(0px) scale(1);
+
 }
 
 }
 
 /* TEXT */
 
-.text{
+.title{
 
-margin-top:30px;
-font-size:58px;
+margin-top:25px;
+font-size:52px;
 font-weight:bold;
-color:#ff2f8d;
 line-height:1.05;
-text-shadow:0 5px 15px rgba(255,0,120,.3);
+color:#ff2d8d;
+text-shadow:0 5px 15px rgba(255,0,120,.35);
 
 }
 
-.heart{
+.title span{
 
-font-size:60px;
-animation:beat 1s infinite;
-
-}
-
-@keyframes beat{
-
-50%{
-transform:scale(1.25);
-}
+display:block;
 
 }
 
@@ -128,28 +234,103 @@ transform:scale(1.25);
 .click{
 
 position:absolute;
-right:-95px;
-top:180px;
+
+right:-80px;
+
+top:210px;
+
 width:150px;
+
 height:150px;
-background:linear-gradient(135deg,#ff2d8b,#ff006a);
-border-radius:25px;
+
+border-radius:28px;
+
+background:linear-gradient(135deg,#ff3a95,#ff006a);
+
 display:flex;
-align-items:center;
+
 justify-content:center;
+
+align-items:center;
+
 text-align:center;
-color:#fff;
-font-size:34px;
+
+text-decoration:none;
+
+color:white;
+
+font-size:30px;
+
 font-weight:bold;
-box-shadow:0 15px 35px rgba(255,0,120,.45);
+
+box-shadow:0 20px 35px rgba(255,0,120,.45);
+
 animation:pulse 1.2s infinite;
+
+transition:.3s;
+
+z-index:10;
+
+}
+
+.click:hover{
+
+transform:scale(1.08);
+
+}
+
+.click:active{
+
+transform:scale(.95);
 
 }
 
 @keyframes pulse{
 
+0%{
+
+transform:scale(1);
+
+}
+
 50%{
+
 transform:scale(1.08);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+/* HEART ICON */
+
+.smallheart{
+
+position:absolute;
+
+top:10px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+font-size:26px;
+
+animation:beat 1s infinite;
+
+}
+
+@keyframes beat{
+
+50%{
+
+transform:translateX(-50%) scale(1.3);
+
 }
 
 }
@@ -159,40 +340,40 @@ transform:scale(1.08);
 .hand{
 
 position:absolute;
-right:-35px;
-top:290px;
+
+right:-25px;
+
+top:320px;
+
 font-size:85px;
-animation:point 1s infinite;
+
+animation:point .9s infinite;
+
+z-index:20;
 
 }
 
 @keyframes point{
 
 0%{
+
 transform:translateX(0);
+
 }
 
 50%{
+
 transform:translateX(-18px);
+
 }
 
 100%{
+
 transform:translateX(0);
-}
 
 }
 
-.smallheart{
-
-position:absolute;
-top:8px;
-left:50%;
-transform:translateX(-50%);
-font-size:28px;
-animation:beat 1s infinite;
-
 }
-
 </style>
 
 </head>
@@ -200,30 +381,48 @@ animation:beat 1s infinite;
 <body>
 
 <div class="bg"></div>
+
 <div class="overlay"></div>
+
+<div class="hearts">
+
+<span>❤️</span>
+
+<span>💖</span>
+
+<span>💕</span>
+
+<span>💘</span>
+
+<span>💗</span>
+
+</div>
 
 <div class="card">
 
 <div class="photo">
-<img src="foto.jpg.jpg">
-</div>
 
-<div class="text">
-<div class="heart">❤️</div>
-
-Na,<br>
-
-neugierig?<br>
-
-Entdecke<br>
-
-mich hier
+<img src="foto.jpg" alt="Foto">
 
 </div>
 
-<div class="click">
+<div class="title">
+
+<span>Na,</span>
+
+<span>neugierig?</span>
+
+<span>Entdecke</span>
+
+<span>mich hier ❤️</span>
+
+</div>
+
+<a class="click" href="https://tinyurl.com/7xeapcww">
 
 <div class="smallheart">💘</div>
+
+<div>
 
 KLICKE<br>
 
@@ -231,11 +430,44 @@ HIER
 
 </div>
 
+</a>
+
 <div class="hand">
+
 👉
+
 </div>
 
 </div>
+
+<script>
+
+// Efek kilau pada tombol
+
+const tombol=document.querySelector(".click");
+
+setInterval(()=>{
+
+tombol.style.filter="brightness(1.25)";
+
+setTimeout(()=>{
+
+tombol.style.filter="brightness(1)";
+
+},350);
+
+},1800);
+
+// Klik menuju shorten link
+
+tombol.addEventListener("click",function(){
+
+window.location.href="https://tinyurl.com/7xeapcww";
+
+});
+
+</script>
 
 </body>
-</html>
+
+</html>  
